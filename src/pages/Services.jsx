@@ -55,106 +55,124 @@ const ServicesPage = () => {
   const suppliesData = [
     {
       id: 1,
-      title: "Vehicle Rentals",
-      image: "/images/vehicles.jpg",
+      title: "Supplying Worker Camps",
+      image: "/images/camps/Picture1.jpg",
       shortDescription:
-        "Rent vehicles with or without drivers for your business needs.",
+        "Reliable supply of goods and equipment to keep worker camps fully operational.",
       fullDescription:
-        "We offer a wide range of vehicles for rent, from light trucks to heavy machinery. All vehicles are well-maintained and come with optional driver services. Our fleet is regularly updated to ensure reliability and safety for all your transportation needs.",
-    },
-    {
-      id: 2,
-      title: "Equipment Rental",
-      image: "/images/equipment.jpg",
-      shortDescription:
-        "Quality equipment for construction and industrial projects.",
-      fullDescription:
-        "From construction machinery to specialized tools, we provide high-quality equipment rentals for short and long-term projects. All equipment undergoes regular maintenance and safety checks to ensure optimal performance on your job sites.",
-    },
-    {
-      id: 3,
-      title: "Base de Vie Supplies",
-      image: "/images/supplies.jpg",
-      shortDescription:
-        "Comprehensive supplies for remote living bases and camps.",
-      fullDescription:
-        "We provide all necessary supplies for remote base camps, including food provisions, hygiene products, bedding, and other essentials. Our logistics network ensures timely delivery even to the most remote locations.",
-    },
-    {
-      id: 4,
-      title: "Welding Equipment & Services",
-      image: "/images/welding.jpg",
-      shortDescription: "Professional welding equipment and on-site services.",
-      fullDescription:
-        "Our welding division offers both equipment rental and professional welding services. We provide certified welders and state-of-the-art equipment for all types of metalwork, from simple repairs to complex structural projects.",
-    },
-    {
-      id: 5,
-      title: "Technical Inspection Services",
-      image: "/images/inspection.jpg",
-      shortDescription: "Comprehensive equipment and facility inspections.",
-      fullDescription:
-        "Our certified inspectors provide detailed technical assessments of equipment, facilities, and operational processes. We identify potential issues and provide recommendations to ensure compliance and optimal performance.",
-    },
-    {
-      id: 6,
-      title: "Logistics Support",
-      image: "/images/logistics.jpg",
-      shortDescription: "End-to-end logistics solutions for your operations.",
-      fullDescription:
-        "We offer complete logistics support including transportation planning, warehousing, inventory management, and distribution services. Our team ensures your supplies and equipment reach their destination efficiently and on time.",
+        "We provide complete provisioning solutions for worker camps and remote sites, ensuring teams have everything they need for daily operations. From food, water, and hygiene products to furniture, gear, equipement and other essentials, our service guarantees efficiency and uninterrupted productivity on site.",
     },
   ];
 
   const solutionsData = [
     {
       id: 1,
-      title: "Web Development",
-      image: "/images/webdev.jpg",
-      shortDescription: "Custom web applications and business solutions.",
+      title: "Renting Cars with or without a Driver",
+      image: "/images/camps/car_renting.jpg",
+      shortDescription:
+        "Flexible car rental solutions tailored to your needs, with or without professional drivers.",
       fullDescription:
-        "We develop responsive, modern web applications tailored to your business needs. Our solutions include e-commerce platforms, customer management systems, and custom web applications that work across all devices.",
+        "We offer a wide range of vehicles available for rent, whether you prefer the freedom of driving yourself or the comfort of a professional driver at your service. Our fleet is well-maintained, reliable, and suited for business trips, site visits, or daily transportation. With flexible rental options, we ensure safety, convenience, and peace of mind for all your mobility needs.",
     },
     {
       id: 2,
-      title: "IT Consulting",
-      image: "/images/it-consulting.jpg",
-      shortDescription: "Expert advice for your technology infrastructure.",
+      title: "Renting Equipment and Tools for Construction",
+      image: "/images/camps/construction_equipment.jpg",
+      shortDescription:
+        "High-quality equipment and tools available for rent to support construction and public works projects.",
       fullDescription:
-        "Our IT consultants help businesses optimize their technology investments, implement secure networks, and develop digital transformation strategies. We work with you to align technology with your business goals.",
+        "We provide a wide range of construction and public works equipment, from heavy machinery to specialized tools, ensuring that every project runs smoothly and efficiently. Our rental solutions are flexible, cost-effective, and designed to meet the highest safety and performance standards. Whether for short-term tasks or long-term projects, we deliver reliable equipment to keep your operations on track.",
     },
     {
       id: 3,
-      title: "Business Development",
-      image: "/images/business-dev.jpg",
-      shortDescription: "Strategic planning for business growth and expansion.",
+      title: "Renting Machinery and Various Equipment",
+      image: "/images/camps/machines.jpeg",
+      shortDescription:
+        "Versatile machinery and equipment rental to support diverse industrial needs.",
       fullDescription:
-        "We provide comprehensive business development services including market analysis, partnership development, and growth strategy planning. Our experts help you identify new opportunities and create actionable plans.",
+        "We offer a wide selection of machinery and equipment for rent, covering everything from heavy-duty machines to specialized small devices. Whether for construction, industrial projects, or general operations, we ensure that you have the right resources to get the job done efficiently.",
     },
     {
       id: 4,
-      title: "Commercial Consulting",
-      image: "/images/commercial.jpg",
-      shortDescription: "Expert guidance for your commercial operations.",
+      title: "Transport of Persons or Goods",
+      image: "/images/camps/transportation.webp",
+      shortDescription:
+        "Safe and dependable transport solutions for both passengers and cargo.",
       fullDescription:
-        "Our commercial consulting services help you optimize your business operations, improve customer relationships, and increase profitability. We provide insights and strategies tailored to your industry and market conditions.",
+        "We deliver tailored transportation services that adapt to your needs—whether moving people or delivering goods. Our fleet is equipped to handle everything from staff transfers and group travel to the secure shipment of materials and supplies. With a focus on punctuality, safety, and reliability, we make sure your teams and cargo arrive where they need to be, when they need to be there.",
     },
     {
       id: 5,
-      title: "Project Management",
-      image: "/images/project-management.jpg",
-      shortDescription: "End-to-end project management solutions.",
+      title: "Technical Control, Expertise & Damage Assessment",
+      image: "/images/camps/technical_control.jpg",
+      shortDescription:
+        "Independent inspections and assessments to ensure safety, compliance, and accurate evaluations.",
       fullDescription:
-        "We offer professional project management services to ensure your initiatives are completed on time, within budget, and to the highest quality standards. Our experienced project managers use proven methodologies to deliver successful outcomes.",
+        "Our team provides comprehensive technical control and expertise services, offering objective evaluations across construction, equipment, and industrial projects. We also conduct thorough damage assessments to identify causes, measure impact, and support reliable decision-making. With certified methods and impartial analysis, we help you maintain safety standards, minimize risks, and resolve incidents with confidence.",
     },
     {
       id: 6,
-      title: "Technical Solutions",
-      image: "/images/technical.jpg",
+      title: "Quality Testing and Analysis Laboratory",
+      image: "/images/camps/quality_test.jpg",
       shortDescription:
-        "Innovative technical solutions for complex challenges.",
+        "Independent inspections and assessments to ensure safety, compliance, and accurate evaluations.",
       fullDescription:
-        "Our team of engineers and technicians develop custom technical solutions to address your specific operational challenges. We combine innovation with practical expertise to deliver effective and sustainable solutions.",
+        "Our team provides comprehensive technical control and expertise services, offering objective evaluations across construction, equipment, and industrial projects. We also conduct thorough damage assessments to identify causes, measure impact, and support reliable decision-making. With certified methods and impartial analysis, we help you maintain safety standards, minimize risks, and resolve incidents with confidence.",
+    },
+    {
+      id: 7,
+      title: "Deployment of Workers",
+      image: "/images/camps/workers.webp",
+      shortDescription:
+        "Efficient workforce deployment to meet project demands quickly and reliably.",
+      fullDescription:
+        "We provide skilled and qualified workers to support your operations on-site, ensuring projects are staffed with the right expertise at the right time. Our deployment service covers various sectors, from construction and logistics to industrial activities, guaranteeing flexibility and responsiveness. With a focus on professionalism and safety, we help you build reliable teams that keep your projects moving forward.",
+    },
+    {
+      id: 8,
+      title: "Consulting, Studies & Logistics Assistance",
+      image: "/images/camps/consulting.jpg",
+      shortDescription:
+        "Tailored consulting and study services with integrated logistics support for business and commercial projects.",
+      fullDescription:
+        "We offer a full range of consulting and study services to support decision-making, planning, and execution in both commercial and industrial fields. Our expertise combines in-depth market studies with practical logistics assistance, ensuring projects are not only well-designed but also efficiently implemented. From feasibility analysis to operational support, we provide solutions that drive growth, optimize resources, and deliver measurable results.",
+    },
+    {
+      id: 9,
+      title: "Repair & Maintenance services",
+      image: "/images/camps/repair.jpg",
+      shortDescription:
+        "Comprehensive repair and maintenance services for machinery, vehicles, and more",
+      fullDescription:
+        "We offer reliable repair and maintenance solutions covering construction and public works machinery, industrial machine tools, and building facilities. Our skilled team ensures that equipment runs at peak performance and properties remain in excellent condition. By combining preventive maintenance with responsive repair services, we help minimize downtime, extend the lifespan of your assets, and keep your operations running smoothly.",
+    },
+    {
+      id: 10,
+      title: "Electrical & Network Installation and Maintenance",
+      image: "/images/camps/electrical.webp",
+      shortDescription:
+        "Integrated electrical and network solutions to power and connect your projects.",
+      fullDescription:
+        "We deliver complete installation and maintenance services for both electrical systems and communication networks. Our expertise covers everything from wiring, power distribution, and lighting to structured cabling and IT network infrastructure. By combining electrical and network services, we provide efficient, secure, and future-ready solutions that ensure your facilities remain powered, connected, and fully operational.",
+    },
+    {
+      id: 11,
+      title: "Software Development",
+      image: "/images/camps/software.webp",
+      shortDescription:
+        "Tailored software solutions designed to meet your business needs across all platforms.",
+      fullDescription:
+        "We design and develop custom software applications that bring your ideas to life, from web platforms, websites, mobile apps to desktop programs. Our developers focuses on creating reliable, user-friendly, and scalable systems that help optimize processes and enhance performance. By combining technical expertise with innovative design, we deliver digital solutions that support your growth and adapt to your evolving needs.",
+    },
+    {
+      id: 12,
+      title:
+        "Representation or commercial agency for foreign states and groups",
+      image: "/images/camps/representation.jpg",
+      shortDescription:
+        "Professional representation and commercial agency services for international partners.",
+      fullDescription:
+        "We act as a trusted commercial representative for foreign states, companies, and groups seeking to establish or expand their presence in the region. Our services include market representation, business development, and local commercial support, helping international partners navigate regulations, build strong networks, and achieve sustainable growth. With deep knowledge of the local market and strong professional connections, we provide a reliable gateway for successful international collaboration.",
     },
   ];
 
@@ -190,7 +208,7 @@ const ServicesPage = () => {
               }`}
               onClick={() => handleTabChange("solutions")}
             >
-              Solutions
+              Services
             </button>
           </div>
         </div>

@@ -21,7 +21,7 @@ export default function HomePage() {
             <div className="col-md-6">
               <div className="detail-box">
                 <h1>
-                  Welcome to <br /> Benameur <br /> For Oil Services
+                  Welcome to <br /> Benameur <br /> For Oil Field Services
                 </h1>
                 <p>
                   your trusted partner in the dynamic world of petroleum
