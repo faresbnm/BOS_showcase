@@ -431,16 +431,6 @@ const ServicesPage = () => {
         {totalPages > 1 && (
           <div className="pagination-container" data-aos="fade-up">
             <div className="pagination">
-              <button
-                className={`pagination-btn ${
-                  currentPage === 1 ? "disabled" : ""
-                }`}
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-              >
-                Previous
-              </button>
-
               <div className="page-numbers">
                 {pageNumbers.map((number) => (
                   <button
@@ -454,16 +444,6 @@ const ServicesPage = () => {
                   </button>
                 ))}
               </div>
-
-              <button
-                className={`pagination-btn ${
-                  currentPage === totalPages ? "disabled" : ""
-                }`}
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-              >
-                Next
-              </button>
             </div>
           </div>
         )}
