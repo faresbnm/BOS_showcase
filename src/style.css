@@ -904,7 +904,83 @@ a:focus {
   color: #0355cc;
 }
 .services-page-section { background-color: #f9f9f9; } .tabs-container { display: flex; justify-content: center; margin-bottom: 40px; } .tabs-wrapper { display: inline-flex; background: white; border-radius: 50px; padding: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); } .tab-button { padding: 12px 30px; border: none; background: transparent; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'Merriweather Sans', sans-serif; font-size: 1.1rem; } .tab-button.active { background-color: #0355cc; color: white; } .services-grid-page { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; transition: opacity 0.3s ease; } .services-grid-page.fade-out { opacity: 0; } .services-grid-page.fade-in { opacity: 1; } .service-card-expandable { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; height: auto; min-height: 450px; } .service-card-expandable:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); } .service-card-image { height: 200px; overflow: hidden; flex-shrink: 0; } .service-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; } .service-card-expandable:hover .service-card-image img { transform: scale(1.05); } .service-card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; height: 100%; } .service-card-content h3 { font-size: 1.5rem; margin-bottom: 15px; color: #333; font-family: 'Merriweather Sans', sans-serif; } .short-description { color: #666; margin-bottom: 20px; line-height: 1.6; flex-shrink: 0; } .expandable-content { max-height: 0; overflow: hidden; transition: max-height 0.2s ease; flex-shrink: 0; } .expandable-content.expanded { max-height: 500px; } .full-description { color: #666; line-height: 1.6; margin-bottom: 20px; } .read-more-btn { display: flex; align-items: center; background: none; border: none; color: #0355cc; font-weight: 600; cursor: pointer; padding: 0; transition: color 0.3s ease; margin-top: auto; align-self: flex-start; } .read-more-btn:hover { color: #2667cc; } .arrow { width: 20px; height: 20px; margin-left: 8px; transition: transform 0.3s ease; } .arrow.rotated { transform: rotate(180deg); } /* Equal height cards in the same row */ .services-grid-page { align-items: start; } /* Fix for cards in the same row */ .service-card-expandable { height: fit-content; } /* Ensure cards maintain proper spacing */ @media (max-width: 1200px) { .services-grid-page { grid-template-columns: repeat(3, 1fr); } } @media (max-width: 992px) { .services-grid-page { grid-template-columns: repeat(2, 1fr); } .service-card-expandable { min-height: 420px; } } @media (max-width: 768px) { .services-grid-page { grid-template-columns: 1fr; } .service-card-expandable { min-height: 400px; } .tabs-wrapper { width: 100%; max-width: 300px; } .tab-button { flex: 1; text-align: center; } } @media (max-width: 576px) { .service-card-expandable { min-height: 380px; } }
+/* Pagination Styles */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
 
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pagination-btn, .page-number {
+  padding: 10px 20px;
+  border: 2px solid #0355cc;
+  background: transparent;
+  color: #0355cc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.pagination-btn:hover:not(.disabled), 
+.page-number:hover:not(.active) {
+  background-color: #0355cc;
+  color: white;
+}
+
+.pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-btn.disabled:hover {
+  background: transparent;
+  color: #0355cc;
+}
+
+.page-number.active {
+  background-color: #0355cc;
+  color: white;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+/* Responsive pagination */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .page-numbers {
+    order: -1;
+  }
+  
+  .pagination-btn {
+    padding: 8px 16px;
+  }
+  
+  .page-number {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-numbers {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 /* About Section Styles */
 .about-section {
   padding: 80px 0;

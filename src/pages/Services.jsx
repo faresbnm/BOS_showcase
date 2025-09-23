@@ -9,7 +9,11 @@ const ServicesPage = () => {
     solutions: {},
   });
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const servicesGridRef = useRef(null);
+
+  // Items per page - 6 services (2 rows of 3)
+  const ITEMS_PER_PAGE = 6;
 
   useEffect(() => {
     AOS.init({
@@ -33,12 +37,13 @@ const ServicesPage = () => {
     // Start transition
     setIsTransitioning(true);
 
-    // Reset expanded items right away (prevents closing animation flash)
+    // Reset expanded items and pagination
     setExpandedItems((prev) => ({
       ...prev,
       [activeTab]: {}, // clear the current tab
       [tab]: {}, // make sure the next tab starts fresh
     }));
+    setCurrentPage(1); // Reset to first page when changing tabs
 
     // Switch tab after transition delay
     setTimeout(() => {
@@ -52,6 +57,18 @@ const ServicesPage = () => {
     }, 300);
   };
 
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+
+    // Smooth scroll to top of services grid
+    if (servicesGridRef.current) {
+      servicesGridRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   const suppliesData = [
     {
       id: 1,
@@ -61,6 +78,131 @@ const ServicesPage = () => {
         "Reliable supply of goods and equipment to keep worker camps fully operational.",
       fullDescription:
         "We provide complete provisioning solutions for worker camps and remote sites, ensuring teams have everything they need for daily operations. From food, water, and hygiene products to furniture, gear, equipement and other essentials, our service guarantees efficiency and uninterrupted productivity on site.",
+    },
+    {
+      id: 2,
+      title: "Lubricants and wood Varnish",
+      image: "/images/camps/lubrificant.png",
+      shortDescription:
+        "High-quality lubricants and protective wood varnishes to improve performance and durability.",
+      fullDescription:
+        "We supply a wide range of lubricants and varnishes designed to optimize equipment performance and extend service life. Our lubricants ensure smooth operation, reduce wear, and improve energy efficiency, while our varnishes provide strong protection against corrosion, heat, and harsh environments. With reliable products tailored to industrial and construction needs, we help maintain efficiency, safety, and long-term durability.",
+    },
+    {
+      id: 3,
+      title: "Electrical supplies",
+      image: "/images/camps/electrical_supplies.webp",
+      shortDescription:
+        "Reliable source for quality electrical materials, equipment, and accessories.",
+      fullDescription:
+        "We provide a wide range of electrical supplies to meet the needs of your projects. From cables, switches, and lighting systems to advanced electrical equipment, our products combine quality, durability, and safety. With trusted brands and efficient delivery, we ensure that your projects are equipped with the right materials for smooth and reliable operations.",
+    },
+    {
+      id: 4,
+      title: "Supply of Kitchen, Refrigeration, and Store Equipment",
+      image: "/images/camps/kitchen_supplies.webp",
+      shortDescription:
+        "supply of kitchen, refrigeration, and store equipment for professional use.",
+      fullDescription:
+        "We offer wholesale kitchen equipment, refrigeration units, and store fixtures designed for restaurants, supermarkets, and commercial spaces. Our products are durable, efficient, and cost-effective, ensuring smooth daily operations. We supply everything from kitchen tools to advanced cooling and display systems for fully equipped workspaces.",
+    },
+    {
+      id: 5,
+      title: "Laundry, Hotel, Café, and Restaurant Equipment",
+      image: "/images/camps/hotel_equipment.webp",
+      shortDescription:
+        "supply of professional equipment for laundries, hotels, cafés, and restaurants.",
+      fullDescription:
+        "We offer a wide range of high-quality equipment and appliances tailored for the hospitality and service industry. From laundry machines and hotel furnishings to café and restaurant kitchen equipment, our wholesale solutions are designed to combine durability, efficiency, and cost-effectiveness. With trusted brands and reliable supply, we help businesses create fully equipped spaces that deliver comfort, performance, and customer satisfaction.",
+    },
+    {
+      id: 6,
+      title: "Hand tools",
+      image: "/images/camps/handtools.jpeg",
+      shortDescription:
+        "Durable and versatile hand tools for construction, repair, and everyday use.",
+      fullDescription:
+        "We supply a wide selection of hand tools designed for professionals and general users alike. From wrenches, hammers, and screwdrivers to specialized tools for construction and maintenance, our products ensure reliability, precision, and safety. Built to last and easy to handle, our tools support efficiency and performance across all types of projects.",
+    },
+    {
+      id: 7,
+      title: "Firefighting Equipment",
+      image: "/images/camps/firefighting.webp",
+      shortDescription:
+        "supply of reliable firefighting and fire safety equipment.",
+      fullDescription:
+        "We provide a complete range of firefighting equipment to ensure maximum safety and protection in industrial, commercial, and residential environments. Our products include fire extinguishers, hoses, alarms, and protective gear, all sourced from trusted manufacturers and compliant with safety standards. With durable, efficient, and easy-to-use solutions, we help safeguard people, properties, and operations against fire risks.",
+    },
+    {
+      id: 8,
+      title: "Pumps for All Applications",
+      image: "/images/camps/Different-Types-of-Pumps.jpg",
+      shortDescription:
+        "Supply of pumps designed for all types of applications, including residential, commercial, and industrial use.",
+      fullDescription:
+        "We offer a comprehensive selection of durable and efficient pumps designed for various applications, including water supply, irrigation, wastewater management, industrial processes, construction, firefighting, and HVAC systems. Our pumps, made from high-quality materials and advanced engineering, ensure optimal flow, energy savings, and a long service life for residential, commercial, and industrial use, meeting the highest standards of quality and safety.",
+    },
+    {
+      id: 9,
+      title: "Jewelry and Watches",
+      image: "/images/camps/Jewelry.png",
+      shortDescription:
+        "fine jewelry and watches for retail and professional distribution.",
+      fullDescription:
+        "We specialize in the supply of high-quality jewelry and watches, offering a wide selection of products that combine elegance, craftsmanship, and durability. Our range includes gold, silver, and precious stone jewelry, alongside luxury and fashion watches tailored to diverse markets and customer preferences. Whether for jewelers, retailers, or boutiques, we provide reliable sourcing, competitive pricing, and timeless designs that meet the highest industry standards.",
+    },
+    {
+      id: 10,
+      title: "Household appliance",
+      image: "/images/camps/electrical_house.webp",
+      shortDescription:
+        "distribution of electrical appliances for households, businesses, and industries.",
+      fullDescription:
+        "We offer a diverse selection of high-quality electrical appliances for residential, commercial, and industrial clients. Our catalog features all household devices, office equipment, and specialized appliances sourced from trusted manufacturers. We focus on delivering durable, efficient, and innovative solutions tailored to meet a wide range of customer needs, from large-scale projects to individual retail purchases.",
+    },
+    {
+      id: 11,
+      title: "supply of telephony, their accessories and their spare parts.",
+      image: "/images/camps/telephone.webp",
+      shortDescription:
+        "Supply of telecommunication devices, accessories, and spare parts for personal and professional use.",
+      fullDescription:
+        "We offer comprehensive telephony solutions, including smartphones, landline devices, VoIP systems, and accessories like chargers, headsets, and more. We also supply spare parts for maintenance and repair, serving individuals, businesses, and resellers with reliable, high-quality products at competitive prices to meet diverse communication needs.",
+    },
+    {
+      id: 12,
+      title: "IT equipment, office machines, accessories and supplies",
+      image: "/images/camps/IT.jpg",
+      shortDescription:
+        "supply of IT equipment, office machines, and accessories.",
+      fullDescription:
+        "We provide IT and office solutions designed to improve efficiency and productivity. Our catalog includes computers, laptops, printers, photocopiers, networking devices, servers, along with accessories such as keyboards, mice, storage devices, cables. We also supply a variety of office consumables and supplies, ensuring seamless day-to-day operations.",
+    },
+    {
+      id: 13,
+      title: "Glass Materials Supply",
+      image: "/images/camps/glasse.jpg",
+      shortDescription:
+        "distribution of glass materials for construction, decoration, and industrial use.",
+      fullDescription:
+        "We sell a wide selection of glass materials tailored for multiple applications, including construction projects, interior decoration, furniture, windows, façades, and industrial use. Our range covers plain, tempered, laminated, and specialized glass types, Whether supplying contractors, architects, or resellers, we provide reliable products and solutions that combine functionality with design excellence.",
+    },
+    {
+      id: 14,
+      title: "Wheels solutions",
+      image: "/images/camps/wheels.jpg",
+      shortDescription:
+        "Supply of all types of wheels for vehicles, machinery, and more",
+      fullDescription:
+        "We specialize in the supply of high-quality wheels designed for cars, trucks, heavy machinery, industrial equipment, and specialized applications. Our range includes standard, heavy-duty, and custom wheels that combine durability, performance, and safety. Whether serving automotive workshops, construction companies, or industrial operations, we provide reliable wheel solutions that meet international standards and ensure long-term efficiency.",
+    },
+    {
+      id: 15,
+      title: "Bags supply",
+      image: "/images/camps/bags.png",
+      shortDescription: "supply of all types of bags",
+      fullDescription:
+        "We provide bags tailored to different needs, including shopping bags, packaging bags, travel bags, backpacks, and industrial-use sacks. Our products are available in various materials such as plastic, paper, fabric, and eco-friendly alternatives to suit both retail and professional requirements.",
     },
   ];
 
@@ -176,8 +318,23 @@ const ServicesPage = () => {
     },
   ];
 
+  // Get current data based on active tab
   const currentData = activeTab === "supplies" ? suppliesData : solutionsData;
   const currentExpandedItems = expandedItems[activeTab] || {};
+
+  // Pagination calculations
+  const totalPages = Math.ceil(currentData.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentItems = currentData.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE
+  );
+
+  // Generate page numbers for pagination
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <section className="services-page-section layout_padding">
@@ -220,7 +377,7 @@ const ServicesPage = () => {
             isTransitioning ? "fade-out" : "fade-in"
           }`}
         >
-          {currentData.map((item, index) => (
+          {currentItems.map((item, index) => (
             <div
               key={item.id}
               className="service-card-expandable"
@@ -269,6 +426,47 @@ const ServicesPage = () => {
             </div>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="pagination-container" data-aos="fade-up">
+            <div className="pagination">
+              <button
+                className={`pagination-btn ${
+                  currentPage === 1 ? "disabled" : ""
+                }`}
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                Previous
+              </button>
+
+              <div className="page-numbers">
+                {pageNumbers.map((number) => (
+                  <button
+                    key={number}
+                    className={`page-number ${
+                      currentPage === number ? "active" : ""
+                    }`}
+                    onClick={() => handlePageChange(number)}
+                  >
+                    {number}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                className={`pagination-btn ${
+                  currentPage === totalPages ? "disabled" : ""
+                }`}
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
