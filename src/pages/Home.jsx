@@ -91,9 +91,9 @@ export default function HomePage() {
                   with National & international experience utilizing extensive
                   engineering and construction operations knowledge.
                 </p>
-                <a className="btn" href="/about">
+                <Link className="btn" to="/about">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-7 col-md-6">
@@ -128,9 +128,9 @@ export default function HomePage() {
                   our expertise and commitment to excellence, we ensure that
                   every project is executed with precision and care.
                 </p>
-                <a className="btn" href="services">
+                <Link className="btn" to="/services">
                   Check our Services
-                </a>
+                </Link>
               </div>
             </div>
           </div>
