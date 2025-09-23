@@ -29,9 +29,9 @@ export default function HomePage() {
                   innovative solutions to the industry, driving progress and
                   redefining excellence.
                 </p>
-                <a href="/contact" className="btn btn-primary">
+                <Link className="btn btn-primary" to="/contact">
                   Contact Us
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-md-6">
@@ -91,7 +91,7 @@ export default function HomePage() {
                   with National & international experience utilizing extensive
                   engineering and construction operations knowledge.
                 </p>
-                <a className="btn" href="about">
+                <a className="btn" href="/about">
                   Read More
                 </a>
               </div>

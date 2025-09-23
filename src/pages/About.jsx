@@ -14,15 +14,11 @@ export default function About() {
   return (
     <section className="about-section">
       <div className="container">
-        <div className="section-header" data-aos="fade-up">
+        <div className="section-header" data-aos="fade-right">
           <h2>
             About <span className="highlight">Us</span>
           </h2>
-          <p
-            className="section-subtitle"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+          <p className="section-subtitle">
             Decades of experience delivering excellence in industrial services
           </p>
         </div>
